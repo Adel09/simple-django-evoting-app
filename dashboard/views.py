@@ -49,9 +49,13 @@ def cast_votes(request):
         else:
             president_id = request.POST['president']
             print(f'President ID ---> {president_id}')
-            selected_president = Candidate.objects.get(id=request.POST['president'])
-            selected_president.votes = selected_president.votes + 1
-            selected_president.save(update_fields=['votes'])
+
+            try:
+                selected_president = Candidate.objects.get(id=request.POST['president'])
+                selected_president.votes = selected_president.votes + 1
+                selected_president.save(update_fields=['votes'])
+            except:
+                pass
 
             try:
                 selected_vice_president = Candidate.objects.get(id=request.POST['vicepresident'])
