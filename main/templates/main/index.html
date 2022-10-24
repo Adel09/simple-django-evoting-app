@@ -24,6 +24,34 @@
     </div>
 </section>
 
+<section>
+    <div class="text-center">
+        <h2>Final Results</h2>
+        
+    </div>
+
+    <div class="row">
+        {% for can in candidates %}
+        <div class="col-md-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{{can.image.url}}" alt="" width="100%" height="300px">
+                    <h4 class="mt-2">{{can.name}}</h4>
+                    <p>Level: {{can.level}}</p>
+                    <p>Position: {{can.position}}</p>
+                    <p>Number of votes: {{can.votes}}</p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="text-center">
+            <p>No Candidates yet</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+
 
 
 
