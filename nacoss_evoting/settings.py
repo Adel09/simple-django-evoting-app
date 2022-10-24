@@ -125,9 +125,7 @@ STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Extra lookup directories for collectstatic to find static files
-STATICFILES_DIRS = (
-    STATIC_ROOT,
-)
+
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
