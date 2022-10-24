@@ -1,0 +1,331 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+
+<section>
+    <div class="container">
+
+        <form action="{% url 'cast-votes' %}" method="post">
+
+            <!-- Presidents -->
+            <div class="row mt-3">
+                <div class="text-center">
+                    <h2>President</h2>
+                </div>
+
+                {% for pres in presidents %}
+                <div class="col-md-6 col-lg-6 col-sm-6">
+        
+                    <label>
+                    <input type="radio" name="president" value="{{pres.id}}" class="card-input-element" />
+                        <div class="card card-input">
+                            <div class="card-body">
+                                <img src="{{pres.image.url}}" alt="" width="100%" height="300px">
+                                <h4 class="mt-2">{{pres.name}}</h4>
+                                <p>Level: {{pres.level}}</p>
+                            </div>
+                        </div>
+            
+                    </label>
+                </div>
+                {% empty %}
+                <h2>No Candidate</h2>
+                {% endfor %}
+                
+                
+            </div>
+
+            <!-- Vice Presidents -->
+            <div class="row mt-3">
+                <div class="text-center">
+                    <h2>Vice President</h2>
+                </div>
+
+                {% for vice in vices %}
+                <div class="col-md-6 col-lg-6 col-sm-6">
+        
+                    <label>
+                    <input type="radio" name="vicepresident" value="{{vice.id}}" class="card-input-element" />
+                        <div class="card card-input">
+                            <div class="card-body">
+                                <img src="{{vice.image.url}}" alt="" width="100%" height="300px">
+                                <h4 class="mt-2">{{vice.name}}</h4>
+                                <p>Level: {{vice.level}}</p>
+                            </div>
+                        </div>
+            
+                    </label>
+                </div>
+                {% empty %}
+                <div class="text-center">
+                    <p>No Candidate</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- General Secretaries -->
+            <div class="row mt-3">
+                <div class="text-center">
+                    <h2>General Secretary</h2>
+                </div>
+
+                {% for sec in gen_secs %}
+                <div class="col-md-6 col-lg-6 col-sm-6">
+        
+                    <label>
+                    <input type="radio" name="gensec" value="{{sec.id}}" class="card-input-element" />
+                        <div class="card card-input">
+                            <div class="card-body">
+                                <img src="{{sec.image.url}}" alt="" width="100%" height="300px">
+                                <h4 class="mt-2">{{sec.name}}</h4>
+                                <p>Level: {{sec.level}}</p>
+                            </div>
+                        </div>
+            
+                    </label>
+                </div>
+                {% empty %}
+                <div class="text-center">
+                    <p>No Candidate</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Assistant General Secretaries -->
+            <div class="row mt-3">
+                <div class="text-center">
+                    <h2>Assistant General Secretary</h2>
+                </div>
+
+                {% for sec in ass_gen_secs %}
+                <div class="col-md-6 col-lg-6 col-sm-6">
+        
+                    <label>
+                    <input type="radio" name="assgensec" value="{{sec.id}}" class="card-input-element" />
+                        <div class="card card-input">
+                            <div class="card-body">
+                                <img src="{{sec.image.url}}" alt="" width="100%" height="300px">
+                                <h4 class="mt-2">{{sec.name}}</h4>
+                                <p>Level: {{sec.level}}</p>
+                            </div>
+                        </div>
+            
+                    </label>
+                </div>
+                {% empty %}
+                <div class="text-center">
+                    <p>No Candidate</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Financial Secretaries -->
+            <div class="row mt-3">
+                <div class="text-center">
+                    <h2>Financial Secretary</h2>
+                </div>
+
+                {% for sec in fin_secs %}
+                <div class="col-md-6 col-lg-6 col-sm-6">
+        
+                    <label>
+                    <input type="radio" name="finsec" value="{{sec.id}}" class="card-input-element" />
+                        <div class="card card-input">
+                            <div class="card-body">
+                                <img src="{{sec.image.url}}" alt="" width="100%" height="300px">
+                                <h4 class="mt-2">{{sec.name}}</h4>
+                                <p>Level: {{sec.level}}</p>
+                            </div>
+                        </div>
+            
+                    </label>
+                </div>
+                {% empty %}
+                <div class="text-center">
+                    <p>No Candidate</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Software Director -->
+            <div class="row mt-3">
+                <div class="text-center">
+                    <h2>Software Director</h2>
+                </div>
+
+                {% for sec in softwares %}
+                <div class="col-md-6 col-lg-6 col-sm-6">
+        
+                    <label>
+                    <input type="radio" name="software" value="{{sec.id}}" class="card-input-element" />
+                        <div class="card card-input">
+                            <div class="card-body">
+                                <img src="{{sec.image.url}}" alt="" width="100%" height="300px">
+                                <h4 class="mt-2">{{sec.name}}</h4>
+                                <p>Level: {{sec.level}}</p>
+                            </div>
+                        </div>
+            
+                    </label>
+                </div>
+                {% empty %}
+                <div class="text-center">
+                    <p>No Candidate</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Hardware Director -->
+            <div class="row mt-3">
+                <div class="text-center">
+                    <h2>Harware Director</h2>
+                </div>
+
+                {% for sec in hardwares %}
+                <div class="col-md-6 col-lg-6 col-sm-6">
+        
+                    <label>
+                    <input type="radio" name="hardware" value="{{sec.id}}" class="card-input-element" />
+                        <div class="card card-input">
+                            <div class="card-body">
+                                <img src="{{sec.image.url}}" alt="" width="100%" height="300px">
+                                <h4 class="mt-2">{{sec.name}}</h4>
+                                <p>Level: {{sec.level}}</p>
+                            </div>
+                        </div>
+            
+                    </label>
+                </div>
+                {% empty %}
+                <div class="text-center">
+                    <p>No Candidate</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Welfare Director -->
+            <div class="row mt-3">
+                <div class="text-center">
+                    <h2>Welfare Director</h2>
+                </div>
+
+                {% for sec in welfares %}
+                <div class="col-md-6 col-lg-6 col-sm-6">
+        
+                    <label>
+                    <input type="radio" name="welfare" value="{{sec.id}}" class="card-input-element" />
+                        <div class="card card-input">
+                            <div class="card-body">
+                                <img src="{{sec.image.url}}" alt="" width="100%" height="300px">
+                                <h4 class="mt-2">{{sec.name}}</h4>
+                                <p>Level: {{sec.level}}</p>
+                            </div>
+                        </div>
+            
+                    </label>
+                </div>
+                {% empty %}
+                <div class="text-center">
+                    <p>No Candidate</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Sports Director -->
+            <div class="row mt-3">
+                <div class="text-center">
+                    <h2>Sports Director</h2>
+                </div>
+
+                {% for sec in sports %}
+                <div class="col-md-6 col-lg-6 col-sm-6">
+        
+                    <label>
+                    <input type="radio" name="sports" value="{{sec.id}}" class="card-input-element" />
+                        <div class="card card-input">
+                            <div class="card-body">
+                                <img src="{{sec.image.url}}" alt="" width="100%" height="300px">
+                                <h4 class="mt-2">{{sec.name}}</h4>
+                                <p>Level: {{sec.level}}</p>
+                            </div>
+                        </div>
+            
+                    </label>
+                </div>
+                {% empty %}
+                <div class="text-center">
+                    <p>No Candidate</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Social Director -->
+            <div class="row mt-3">
+                <div class="text-center">
+                    <h2>Social Director</h2>
+                </div>
+
+                {% for sec in socials %}
+                <div class="col-md-6 col-lg-6 col-sm-6">
+        
+                    <label>
+                    <input type="radio" name="socials" value="{{sec.id}}" class="card-input-element" />
+                        <div class="card card-input">
+                            <div class="card-body">
+                                <img src="{{sec.image.url}}" alt="" width="100%" height="300px">
+                                <h4 class="mt-2">{{sec.name}}</h4>
+                                <p>Level: {{sec.level}}</p>
+                            </div>
+                        </div>
+            
+                    </label>
+                </div>
+                {% empty %}
+                <div class="text-center">
+                    <p>No Candidate</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Public Relations Officer -->
+            <div class="row mt-3">
+                <div class="text-center">
+                    <h2>Public Relations Officer</h2>
+                </div>
+
+                {% for sec in pros %}
+                <div class="col-md-6 col-lg-6 col-sm-6">
+        
+                    <label>
+                    <input type="radio" name="pros" value="{{sec.id}}" class="card-input-element" />
+                        <div class="card card-input">
+                            <div class="card-body">
+                                <img src="{{sec.image.url}}" alt="" width="100%" height="300px">
+                                <h4 class="mt-2">{{sec.name}}</h4>
+                                <p>Level: {{sec.level}}</p>
+                            </div>
+                        </div>
+            
+                    </label>
+                </div>
+                {% empty %}
+                <div class="text-center">
+                    <p>No Candidate</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Cast your votes!</button>
+            </div>
+            {% csrf_token %}
+
+        </form>
+
+
+    </div>
+</section>
+
+{% endblock %}
+
+

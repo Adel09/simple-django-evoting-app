@@ -1,0 +1,1 @@
+web: gunicorn nacoss_evoting.wsgi --log-file -
